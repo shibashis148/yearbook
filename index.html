@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cool Memory Page</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-top: 50px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .rotate {
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .username {
+            font-weight: bold;
+            color: #FFD700;
+        }
+    </style>
+    <script>
+        // JavaScript code
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve the username from the URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+
+            // Update the page content with the username
+            if (username) {
+                const usernameElements = document.getElementsByClassName('username');
+                for (let i = 0; i < usernameElements.length; i++) {
+                    usernameElements[i].textContent = username;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+    
+    <h2>अपने स्मृति पृष्ठ में आपका स्वागत है, <span class="username"></span>!</h2>
+    <p>नमस्ते, <span class="username"></span>! समय की कमी के कारण, मैं अभी किसी के लिए लेख नहीं लिख पा रहा हूँ। हालांकि, मैंने यहां आपके लिए एक लिंक जोड़ दी है। <span class="blink">📝</span> जब आप तैयार हों, तो इस लिंक का अन्वेषण करें और खोजें. <span class="blink">⏰</span></p>
+    <p>उन दिनों तक, मैं वादा करता हूँ कि मैं आपके लिए एक विशेष स्मृति पृष्ठ तैयार करूंगा। <span class="rotate">🌟</span> बने रहें और मैं इसे सर्वोत्कृष्ट और यादगार बनाने का प्रयास करूंगा! <span class="rotate">💖</span></p>
+</body>
+</html>
